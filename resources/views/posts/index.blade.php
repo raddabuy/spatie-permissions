@@ -22,9 +22,9 @@
                                 <tr>
                                     <td>{{ $post->title }}</td>
                                     <td>
-                                        @role('editor|admin')
+                                        @can('edit post')
                                             <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                        @endrole
+                                        @endcan
                                     </td>
                                 </tr>
                             @empty

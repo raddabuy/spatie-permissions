@@ -19,5 +19,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//add middleware for separate route in resource
+//post/create middleware('role:writer|admin')
+//post/{post}/edit middleware('permission: edit post')
 Route::resource('posts', 'App\Http\Controllers\PostController');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
